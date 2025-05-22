@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculation History</title>
+    <link rel="stylesheet" href="/page/style.css">
+</head>
+<body>
+    <div class="history-container">
+        <h1>Calculation History</h1>
+        <button class="back-button" onclick="window.location.href='/'">Back to Calculator</button>
+        <table id="historyTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Operation</th>
+                    <th>First Number</th>
+                    <th>Second Number</th>
+                    <th>Result</th>
+                </tr>
+            </thead>
+            <tbody id="historyBody">
+                <!-- Table rows will be inserted here -->
+            </tbody>
+        </table>
+    </div>
+    <script src="/page/history.js"></script>
+</body>
+</html>

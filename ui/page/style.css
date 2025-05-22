@@ -1,42 +1,87 @@
- body {
-     font-family: sans-serif;
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     min-height: 100vh;
-     background-color: #f0f0f0;
- }
+body {
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+}
 
- .calculator {
-     background-color: #fff;
-     padding: 20px;
-     border-radius: 8px;
-     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-     text-align: center;
- }
+.calculator {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
 
- input[type="number"] {
-     padding: 8px;
-     margin: 5px;
-     border: 1px solid #ccc;
-     border-radius: 4px;
- }
+input[type="number"] {
+    padding: 8px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
 
- button {
-     padding: 10px 15px;
-     margin: 5px;
-     border: none;
-     background-color: #007bff;
-     color: white;
-     border-radius: 4px;
-     cursor: pointer;
- }
+button {
+    padding: 10px 15px;
+    margin: 5px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
 
- button:hover {
-     background-color: #0056b3;
- }
+button:hover {
+    background-color: #0056b3;
+}
 
- #result {
-     margin-top: 20px;
-     font-weight: bold;
- }
+#result {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+/* history */
+
+.history-button {
+    margin-top: 15px;
+    background-color: #28a745;
+}
+
+.history-button:hover {
+    background-color: #218838;
+}
+
+/* history list */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #007bff;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.history-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.back-button {
+    margin-bottom: 20px;
+}

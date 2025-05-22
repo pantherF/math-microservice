@@ -1,0 +1,6 @@
+CREATE TABLE calculations (
+  id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+  operator VARCHAR NOT NULL,
+  first_number DOUBLE NOT NULL,
+  second_number DOUBLE NOT NULL
+);

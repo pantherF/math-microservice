@@ -17,9 +17,20 @@ fn index() -> RawHtml<String> {
     }
 }
 
+#[get("/history")]  
+fn history() -> RawHtml<String> {  
+    match read_to_string("page/history.html") {  
+        Ok(html) => RawHtml(html),  
+        Err(e) => {  
+            println!("Error reading history.html: {:?}", e);  
+            RawHtml("<h1>Error loading history page</h1>".to_string())  
+        }  
+    }  
+}
+
 #[launch]
 fn rocket() -> _ {
     build()
-        .mount("/", routes![index])
+        .mount("/", routes![index, history])
         .mount("/page", FileServer::from(relative!("page")))
 }

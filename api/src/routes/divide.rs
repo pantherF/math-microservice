@@ -1,16 +1,15 @@
-use rocket::{post, serde::json};
+use rocket::{post, serde::json::Json, http::Status};
 use calc::divide;
-use crate::{
-    models::{CalculationRequest, CalculationResponse},
-    errors::ApiError,
-};
+use rocket_okapi::openapi;
+use crate::models::{CalculationRequest, CalculationResponse};
 
-#[post("/divide", format = "json", data = "<request>")]  
-pub async fn handle_divide(request: json::Json<CalculationRequest>) -> Result<json::Json<CalculationResponse>, ApiError> {  
-    let result = match divide(request.operand1, request.operand2) {
-        Some(result) => result,
-        None => return Err(ApiError::InvalidInput),
-    };
-
-    Ok(json::Json(CalculationResponse { result }))  
+#[openapi]
+#[post("/divide", format = "json", data = "<request>")]
+pub async fn handle_divide(
+    request: Json<CalculationRequest>,
+) -> Result<Json<CalculationResponse>, (Status, String)> {
+    match divide(request.operand1, request.operand2) {
+        Some(result) => Ok(Json(CalculationResponse { result })),
+        None => Err((Status::InternalServerError, "Cannot divide by zero".to_string())),
+    }
 }

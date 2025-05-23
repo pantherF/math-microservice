@@ -2,5 +2,6 @@ ui/target/
 api/target/
 api/calc/target/
 db/target
+db/diesel.toml
 .env
 storage.db
